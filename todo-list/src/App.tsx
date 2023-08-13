@@ -1,8 +1,5 @@
-import todoLogo from "./assets/todo-logo.svg";
-import styles from "./styles.module.css";
-import { AddNewTodo } from "./components/AddNewTodo";
+import { AddNewTodoForm } from "./components/AddNewTodoForm";
 import { TodosInfo } from "./components/TodosInfo";
-import { Icons } from "./components/Icons/icons";
 import { Header } from "./components/Header";
 import { useState } from "react";
 import { TodosList } from "./components/TodosList";
@@ -15,6 +12,18 @@ export interface TodoItem {
 
 function App() {
 	const [todos, setTodos] = useState<TodoItem[]>([]);
+
+	const addNewTodo = (title: string) => {
+		setTodos([
+			...todos,
+			{
+				id: crypto.randomUUID(),
+				title: title,
+				isCompleted: false,
+			},
+		]);
+	};
+
 	return (
 		<div>
 			<Header />
@@ -26,7 +35,7 @@ function App() {
 					margin: "0 auto",
 				}}
 			>
-				<AddNewTodo />
+				<AddNewTodoForm addNewTodo={addNewTodo} />
 				<section>
 					<TodosInfo />
 					<TodosList todos={todos} />

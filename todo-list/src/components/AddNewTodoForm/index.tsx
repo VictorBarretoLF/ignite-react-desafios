@@ -2,12 +2,17 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { Icons } from "../Icons/icons";
 import styles from "./newtodo.module.css";
 
-export function AddNewTodo() {
+type Props = {
+	addNewTodo: (title: string) => void;
+};
+
+export function AddNewTodoForm({ addNewTodo }: Props) {
 	const [title, setTitle] = useState("");
 
 	function handleSubmit(event: FormEvent) {
 		event.preventDefault();
 
+		addNewTodo(title);
 		setTitle("");
 	}
 
@@ -24,7 +29,7 @@ export function AddNewTodo() {
 				className={styles.addNewTodoInput}
 				onChange={onChangeTitle}
 			/>
-			<button className={styles.addNewTodoButton}>
+			<button type="submit" className={styles.addNewTodoButton}>
 				Criar <Icons.plus />
 			</button>
 		</form>
