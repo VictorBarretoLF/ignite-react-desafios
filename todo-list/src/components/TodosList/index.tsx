@@ -22,6 +22,7 @@ export function TodosList({ todos, deleteTodoById }: Props) {
 				</section>
 			) : (
 				<>
+				{/* TODO: create a component for the todo down bellow*/}
 					{todos.map(({ id, title, isCompleted }) => (
 						<div key={id} className={styles.todo}>
 							<button type="button" className={styles.todoCheckButton}>

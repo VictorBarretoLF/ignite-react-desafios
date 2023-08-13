@@ -10,6 +10,7 @@ export interface TodoItem {
 	isCompleted: boolean;
 }
 
+// TODO: MARK TODO AS CHECKED
 function App() {
 	const [todos, setTodos] = useState<TodoItem[]>([]);
 
