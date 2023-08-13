@@ -20,20 +20,21 @@ export function TodosList({ todos }: Props) {
 					</div>
 				</section>
 			) : (
-				<div className={styles.todo}>
-					<button type="button" className={styles.todoCheckButton}>
-						<div></div>
-					</button>
+				<>
+					{todos.map(({ id, title, isCompleted }) => (
+						<div key={id} className={styles.todo}>
+							<button type="button" className={styles.todoCheckButton}>
+								{isCompleted ? <Icons.checkCircle /> : <div></div>}
+							</button>
 
-					<p>
-						Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel
-						sed fames integer.
-					</p>
+							<p>{title}</p>
 
-					<button type="button" className={styles.deleteButton}>
-						<Icons.trash />
-					</button>
-				</div>
+							<button type="button" className={styles.deleteButton}>
+								<Icons.trash />
+							</button>
+						</div>
+					))}
+				</>
 			)}
 		</div>
 	);
