@@ -1,11 +1,16 @@
+import { TodoItem } from "../../App";
 import styles from "./todoinfo.module.css";
 
-export function TodosInfo() {
+type Props = {
+	todos: TodoItem[];
+};
+
+export function TodosInfo({ todos }: Props) {
 	return (
 		<header className={styles.TodoInfoHeader}>
 			<div className={styles.todoInfo}>
 				<p>Tarefas criadas</p>
-				<span>0</span>
+				<span>{todos.length}</span>
 			</div>
 
 			<div className={styles.todoInfo}>

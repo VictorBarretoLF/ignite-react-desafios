@@ -24,6 +24,13 @@ function App() {
 		]);
 	};
 
+	const deleteTodo = (id: string) => {
+		const todoListWithoutDeltedTodo = todos.filter(
+			(currentTodo) => currentTodo.id !== id
+		);
+		setTodos(todoListWithoutDeltedTodo);
+	};
+
 	return (
 		<div>
 			<Header />
@@ -37,8 +44,8 @@ function App() {
 			>
 				<AddNewTodoForm addNewTodo={addNewTodo} />
 				<section>
-					<TodosInfo />
-					<TodosList todos={todos} />
+					<TodosInfo todos={todos} />
+					<TodosList todos={todos} deleteTodo={deleteTodo} />
 				</section>
 			</main>
 		</div>

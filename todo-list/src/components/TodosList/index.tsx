@@ -4,9 +4,10 @@ import styles from "./todoslist.module.css";
 
 type Props = {
 	todos: TodoItem[];
+	deleteTodo: (id: string) => void;
 };
 
-export function TodosList({ todos }: Props) {
+export function TodosList({ todos, deleteTodo }: Props) {
 	return (
 		<div className={styles.todoList}>
 			{todos.length === 0 ? (
@@ -29,7 +30,11 @@ export function TodosList({ todos }: Props) {
 
 							<p>{title}</p>
 
-							<button type="button" className={styles.deleteButton}>
+							<button
+								type="button"
+								onClick={() => deleteTodo(id)}
+								className={styles.deleteButton}
+							>
 								<Icons.trash />
 							</button>
 						</div>
