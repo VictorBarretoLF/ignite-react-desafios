@@ -25,7 +25,15 @@ function App() {
 
 					<div className={styles.todoList}>
 						{todos.length === 0 ? (
-							"nada"
+							<section className={styles.todoEmptyList}>
+								<Icons.clipboard width="3.5rem" height="3.5rem" />
+								<div>
+									<p className={styles.todoTextEmphasis}>
+										Você ainda não tem tarefas cadastradas
+									</p>
+									<p>Crie tarefas e organize seus itens a fazer</p>
+								</div>
+							</section>
 						) : (
 							<div className={styles.todo}>
 								<button type="button" className={styles.todoCheckButton}>
