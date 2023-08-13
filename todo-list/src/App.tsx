@@ -32,6 +32,10 @@ function App() {
 		setTodos(todoListWithoutDeltedTodo);
 	};
 
+	const markTodoAsChecked = (id: string) => {
+		console.log(id);
+	};
+
 	return (
 		<div>
 			<Header />
