@@ -6,8 +6,14 @@ import { Icons } from "./components/Icons/icons";
 import { Header } from "./components/Header";
 import { useState } from "react";
 
+export interface TodoItem {
+	id: string;
+	title: string;
+	isCompleted: boolean;
+}
+
 function App() {
-	const [todos, setTodos] = useState([]);
+	const [todos, setTodos] = useState<TodoItem[]>([]);
 	return (
 		<div>
 			<Header />
