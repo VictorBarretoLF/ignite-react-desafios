@@ -1,6 +1,7 @@
 import todoLogo from "./assets/todo-logo.svg";
 import styles from "./styles.module.css";
-import { Icons } from "./components/icons";
+import { AddNewTodo } from "./components/AddNewTodo";
+import { TodosInfo } from "./components/TodosInfo";
 
 function App() {
 	return (
@@ -9,20 +10,18 @@ function App() {
 				<img src={todoLogo} alt="todo logo" />
 			</header>
 
-			<div>
-				<div>
-					<form action="" className={styles.addNewTaskForm}>
-						<input
-							placeholder="Adicione uma nova tarefa"
-							type="text"
-							className={styles.addNewTaskInput}
-						/>
-						<button className={styles.addNewTaskButton}>
-							Criar <Icons.plus />
-						</button>
-					</form>
-				</div>
-			</div>
+			<main
+				style={{
+					maxWidth: "46rem",
+					padding: "0 1rem",
+					margin: "0 auto",
+				}}
+			>
+				<AddNewTodo />
+				<section>
+					<TodosInfo />
+				</section>
+			</main>
 		</div>
 	);
 }
