@@ -24,7 +24,7 @@ function App() {
 		]);
 	};
 
-	const deleteTodo = (id: string) => {
+	const deleteTodoById = (id: string) => {
 		const todoListWithoutDeltedTodo = todos.filter(
 			(currentTodo) => currentTodo.id !== id
 		);
@@ -45,7 +45,7 @@ function App() {
 				<AddNewTodoForm addNewTodo={addNewTodo} />
 				<section>
 					<TodosInfo todos={todos} />
-					<TodosList todos={todos} deleteTodo={deleteTodo} />
+					<TodosList todos={todos} deleteTodoById={deleteTodoById} />
 				</section>
 			</main>
 		</div>

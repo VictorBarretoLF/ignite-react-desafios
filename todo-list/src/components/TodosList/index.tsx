@@ -4,10 +4,10 @@ import styles from "./todoslist.module.css";
 
 type Props = {
 	todos: TodoItem[];
-	deleteTodo: (id: string) => void;
+	deleteTodoById: (id: string) => void;
 };
 
-export function TodosList({ todos, deleteTodo }: Props) {
+export function TodosList({ todos, deleteTodoById }: Props) {
 	return (
 		<div className={styles.todoList}>
 			{todos.length === 0 ? (
@@ -32,7 +32,7 @@ export function TodosList({ todos, deleteTodo }: Props) {
 
 							<button
 								type="button"
-								onClick={() => deleteTodo(id)}
+								onClick={() => deleteTodoById(id)}
 								className={styles.deleteButton}
 							>
 								<Icons.trash />
