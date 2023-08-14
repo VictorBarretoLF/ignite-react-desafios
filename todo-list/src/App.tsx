@@ -33,7 +33,16 @@ function App() {
 	};
 
 	const markTodoAsChecked = (id: string) => {
-		console.log(id);
+		const newTodos = todos.map((todo) => {
+			if (todo.id === id) {
+				return {
+					...todo,
+					isCompleted: !todo.isCompleted,
+				};
+			}
+			return todo;
+		});
+		setTodos(newTodos);
 	};
 
 	return (
@@ -50,7 +59,11 @@ function App() {
 				<AddNewTodoForm addNewTodo={addNewTodo} />
 				<section>
 					<TodosInfo todos={todos} />
-					<TodosList todos={todos} deleteTodoById={deleteTodoById} />
+					<TodosList
+						todos={todos}
+						deleteTodoById={deleteTodoById}
+						markTodoAsChecked={markTodoAsChecked}
+					/>
 				</section>
 			</main>
 		</div>

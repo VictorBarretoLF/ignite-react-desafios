@@ -71,3 +71,8 @@
 .todoTextEmphasis {
 	font-weight: 700;
 }
+
+p.textCompleted {
+	color: var(--gray-300);
+	text-decoration: line-through;
+}

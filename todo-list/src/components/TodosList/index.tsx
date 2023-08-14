@@ -5,9 +5,10 @@ import styles from "./todoslist.module.css";
 type Props = {
 	todos: TodoItem[];
 	deleteTodoById: (id: string) => void;
+	markTodoAsChecked: (id: string) => void;
 };
 
-export function TodosList({ todos, deleteTodoById }: Props) {
+export function TodosList({ todos, deleteTodoById, markTodoAsChecked }: Props) {
 	return (
 		<div className={styles.todoList}>
 			{todos.length === 0 ? (
@@ -22,14 +23,18 @@ export function TodosList({ todos, deleteTodoById }: Props) {
 				</section>
 			) : (
 				<>
-				{/* TODO: create a component for the todo down bellow*/}
+					{/* TODO: create a component for the todo down bellow*/}
 					{todos.map(({ id, title, isCompleted }) => (
 						<div key={id} className={styles.todo}>
-							<button type="button" className={styles.todoCheckButton}>
+							<button
+								type="button"
+								className={styles.todoCheckButton}
+								onClick={() => markTodoAsChecked(id)}
+							>
 								{isCompleted ? <Icons.checkCircle /> : <div></div>}
 							</button>
 
-							<p>{title}</p>
+							<p className={isCompleted ? styles.textCompleted : ""}>{title}</p>
 
 							<button
 								type="button"
