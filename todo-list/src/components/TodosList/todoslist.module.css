@@ -39,6 +39,13 @@
 	border: 2px solid var(--blue);
 }
 
+.todoCheckButton svg {
+	width: 1.125rem;
+	height: 1.125rem;
+	fill: var(--purple-dark);
+	color: white;
+}
+
 .todoCheckButton div:hover {
 	border: 2px solid var(--blue-dark);
 	background: var(--gray-400);
