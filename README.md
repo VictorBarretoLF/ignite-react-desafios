@@ -1,4 +1,4 @@
-# 🚀 Domine o React com Desafios Ignite: Um Guia para 2022
+# 🚀 Rocketseat Desafios ignite
 
 ## Desafio 01 - Organize sua Vida com a To-Do List
 
@@ -6,8 +6,8 @@ Aprimore habilidades em **React** criando uma aplicação que organiza tarefas d
 
 ### Tecnologias Utilizadas:
 
-- **Vite**
-- **CSS Modules**
-- **Typescript**
+-   **Vite**
+-   **CSS Modules**
+-   **Typescript**
 
 Dê uma olhada na aplicação finalizada [aqui](https://victorbarretotodoapp.vercel.app/), e comece a planejar e organizar sua vida agora!
