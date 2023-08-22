@@ -1,11 +1,5 @@
 import CoffeeLogo from "../../assets/coffee-logo.svg";
-import {
-    CartButton,
-    IconShoppingCart,
-    LinksContainer,
-    NavbarContainer,
-    RegionContainer,
-} from "./styles";
+import { CartButton, LinksContainer, NavbarContainer, RegionContainer } from "./styles";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MapPin, ShoppingCart } from "phosphor-react";
