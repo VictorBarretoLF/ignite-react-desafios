@@ -21,8 +21,26 @@ type IPAddressInfo = {
     as: string;
 };
 
+const DEFAULT_LOCATION: IPAddressInfo = {
+    query: "192.168.1.1", // You can set an actual IP if needed
+    status: "success",
+    country: "Brazil",
+    countryCode: "BR",
+    region: "PB",
+    regionName: "Paraíba",
+    city: "João Pessoa",
+    zip: "58000-000", // This is a general ZIP code; you might want to use a specific one
+    lat: -7.1196,
+    lon: -34.8456,
+    timezone: "America/Fortaleza",
+    isp: "Example ISP", // Replace with a real ISP if needed
+    org: "Example Organization", // Replace with a real organization if needed
+    as: "AS123456 Example Autonomous System", // Replace with a real AS number if needed
+};
+
 export default function Navbar() {
-    const [currentLocation, setCurrentLocation] = useState<IPAddressInfo>();
+    const [currentLocation, setCurrentLocation] = useState<IPAddressInfo>(DEFAULT_LOCATION);
+
     useEffect(() => {
         async function getClientCurrentLocation() {
             try {
