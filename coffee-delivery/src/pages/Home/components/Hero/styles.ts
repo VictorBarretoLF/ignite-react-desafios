@@ -7,6 +7,8 @@ export const HeroContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    gap: 3.5rem;
 `;
 
 export const HeaderContainer = styled.section`
