@@ -6,11 +6,11 @@ type Props = {
     icon: IconTypes;
 } & IconsContainerProps;
 
-export default function InfoWithIcon({ text, icon, iconBackgroundColor }: Props) {
+export default function InfoWithIcon({ text, icon, $iconBackgroundColor }: Props) {
     const Icon = Icons[icon];
     return (
         <InfoWithIconContainer>
-            <IconContainer iconBackgroundColor={iconBackgroundColor}>
+            <IconContainer $iconBackgroundColor={$iconBackgroundColor}>
                 <Icon weight="fill" />
             </IconContainer>
             {!text ? null : <p>{text}</p>}

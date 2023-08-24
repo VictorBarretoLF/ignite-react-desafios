@@ -21,22 +21,22 @@ export default function Hero() {
                     <InfoWithIcon
                         icon="cart"
                         text="Compra simples e segura"
-                        iconBackgroundColor={colors["brand-yellow-dark"]}
+                        $iconBackgroundColor={colors["brand-yellow-dark"]}
                     />
                     <InfoWithIcon
                         icon="package"
                         text="Embalagem mantém o café intacto"
-                        iconBackgroundColor={colors["base-text"]}
+                        $iconBackgroundColor={colors["base-text"]}
                     />
                     <InfoWithIcon
                         icon="timer"
                         text="Entrega rápida e rastreada"
-                        iconBackgroundColor={colors["brand-yellow"]}
+                        $iconBackgroundColor={colors["brand-yellow"]}
                     />
                     <InfoWithIcon
                         icon="coffee"
                         text="O café chega fresquinho até você"
-                        iconBackgroundColor={colors["brand-purple"]}
+                        $iconBackgroundColor={colors["brand-purple"]}
                     />
                 </AdvantagesContainer>
             </div>
