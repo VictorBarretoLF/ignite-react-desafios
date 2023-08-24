@@ -1,6 +1,5 @@
 import { IconTypes, Icons } from "../icons";
 import { IconsContainerProps, InfoWithIconContainer } from "./styles";
-import { Icon } from "phosphor-react";
 
 type Props = {
     text?: string;
