@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-interface IconsContainerProps {
+export interface IconsContainerProps {
     iconBackgroundColor: string;
 }
 
