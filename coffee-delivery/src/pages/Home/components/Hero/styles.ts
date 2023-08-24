@@ -3,11 +3,15 @@ import { styled } from "styled-components";
 export const HeroContainer = styled.section`
     width: 100%;
     height: 34rem;
-    border: 1px solid red;
 
     display: flex;
     align-items: center;
     justify-content: center;
+`;
+
+export const HeaderContainer = styled.section`
+    margin-bottom: 4.125rem;
+    max-width: 36.75rem;
 `;
 
 export const AdvantagesContainer = styled.div`

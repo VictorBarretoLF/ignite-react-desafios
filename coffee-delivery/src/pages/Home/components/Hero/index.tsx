@@ -1,4 +1,4 @@
-import { AdvantagesContainer, HeroContainer } from "./styles";
+import { AdvantagesContainer, HeaderContainer, HeroContainer } from "./styles";
 import InfoWithIcon from "../../../../components/InfoWithIcon";
 import { Heading, Paragraph } from "../../../../components/Typographt";
 import IntroLogo from "../../../../assets/intro-img.png";
@@ -7,12 +7,12 @@ export default function Hero() {
     return (
         <HeroContainer>
             <div>
-                <section style={{ maxWidth: "588px" }}>
+                <HeaderContainer>
                     <Heading size="xl">Encontre o café perfeito para qualquer hora do dia</Heading>
                     <Paragraph as="h3" size="l" color="subtitle">
                         Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
                     </Paragraph>
-                </section>
+                </HeaderContainer>
 
                 <AdvantagesContainer>
                     <InfoWithIcon icon="cart" text="Compra simples e segura" />
