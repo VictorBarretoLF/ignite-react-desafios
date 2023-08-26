@@ -1,10 +1,14 @@
 import { Heading } from "../../../../components/Typographt";
+import CoffeeCard from "../CoffeeCard";
+import { CoffeeMenuContainer } from "./styles";
 
 function CoffeeMenu() {
     return (
-        <section>
+        <CoffeeMenuContainer>
             <Heading>Nossos cafés</Heading>
-        </section>
+
+            <CoffeeCard />
+        </CoffeeMenuContainer>
     );
 }
 
