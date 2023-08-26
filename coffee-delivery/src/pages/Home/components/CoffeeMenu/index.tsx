@@ -10,7 +10,7 @@ function CoffeeMenu() {
 
             <CoffeeList>
                 {coffeeList.map((singleCoffee) => {
-                    return <CoffeeCard key={singleCoffee.id} />;
+                    return <CoffeeCard key={singleCoffee.id} coffee={singleCoffee} />;
                 })}
             </CoffeeList>
         </CoffeeMenuContainer>
