@@ -1,13 +1,18 @@
 import { Heading } from "../../../../components/Typographt";
+import { coffeeList } from "../../../../config/coffee-list";
 import CoffeeCard from "../CoffeeCard";
-import { CoffeeMenuContainer } from "./styles";
+import { CoffeeList, CoffeeMenuContainer } from "./styles";
 
 function CoffeeMenu() {
     return (
         <CoffeeMenuContainer>
             <Heading>Nossos cafés</Heading>
 
-            <CoffeeCard />
+            <CoffeeList>
+                {coffeeList.map((singleCoffee) => {
+                    return <CoffeeCard key={singleCoffee.id} />;
+                })}
+            </CoffeeList>
         </CoffeeMenuContainer>
     );
 }
