@@ -4,12 +4,16 @@ export const CoffeeCardContainer = styled.div`
     width: 100%;
     max-width: 16rem;
 
+    text-align: center;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     background: ${({ theme }) => theme.colors["base-card"]};
     border-radius: 6px 36px 6px 36px;
+
+    padding: 0 1.25rem;
 
     img {
         width: 7.5rem;
@@ -24,8 +28,8 @@ export const CoffeeTags = styled.div`
     align-items: center;
     justify-content: center;
     gap: 4px;
-    margin-top: 1rem;
-    margin-bottom: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
 
     span {
