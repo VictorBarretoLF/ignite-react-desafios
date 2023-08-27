@@ -43,7 +43,7 @@ export const CoffeeTags = styled.div`
     }
 `;
 
-export const MoneyContainer = styled.div`
+export const PriceContainer = styled.div`
     display: flex;
     align-items: baseline;
     gap: 0.25rem;
