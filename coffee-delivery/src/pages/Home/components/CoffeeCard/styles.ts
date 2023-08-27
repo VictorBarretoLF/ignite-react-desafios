@@ -42,3 +42,9 @@ export const CoffeeTags = styled.div`
         font-weight: 700;
     }
 `;
+
+export const MoneyContainer = styled.div`
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+`;

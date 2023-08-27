@@ -1,6 +1,7 @@
 import Coffee from "../../../../assets/coffees/Type=Americano.svg";
-import { Paragraph } from "../../../../components/Typographt";
-import { CoffeeCardContainer, CoffeeTags } from "./styles";
+import { Heading, Paragraph } from "../../../../components/Typographt";
+import { formatMoney } from "../../../../lib/utils";
+import { CoffeeCardContainer, CoffeeTags, MoneyContainer } from "./styles";
 
 export interface Coffee {
     id: number;
@@ -16,6 +17,8 @@ interface CoffeeCardProps {
 }
 
 export default function CoffeeCard({ coffee }: CoffeeCardProps) {
+    const formattedPrice = formatMoney(coffee.price);
+
     return (
         <CoffeeCardContainer>
             <img src={coffee.svg} alt={coffee.name} />
@@ -32,6 +35,15 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
             <Paragraph color="label" size="s" style={{ marginBottom: "2rem" }}>
                 {coffee.description}
             </Paragraph>
+
+            <footer>
+                <MoneyContainer>
+                    <Paragraph size="s">R$</Paragraph>
+                    <Heading size="m" color="text" as="strong">
+                        {formattedPrice}
+                    </Heading>
+                </MoneyContainer>
+            </footer>
         </CoffeeCardContainer>
     );
 }
