@@ -48,3 +48,23 @@ export const PriceContainer = styled.div`
     align-items: baseline;
     gap: 0.25rem;
 `;
+
+export const BuyButton = styled.button`
+    border: none;
+    border-radius: 6px;
+
+    padding: 0.5rem;
+
+    background-color: ${({ theme }) => theme.colors["brand-purple-dark"]};
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: ${({ theme }) => theme.colors["brand-purple"]};
+    }
+`;

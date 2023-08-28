@@ -1,7 +1,8 @@
 import Coffee from "../../../../assets/coffees/Type=Americano.svg";
 import { Heading, Paragraph } from "../../../../components/Typographt";
+import { Icons } from "../../../../components/icons";
 import { formatMoney } from "../../../../lib/utils";
-import { CoffeeCardContainer, CoffeeTags, PriceContainer } from "./styles";
+import { BuyButton, CoffeeCardContainer, CoffeeTags, PriceContainer } from "./styles";
 
 export interface Coffee {
     id: number;
@@ -43,6 +44,12 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
                         {formattedPrice}
                     </Heading>
                 </PriceContainer>
+
+                <div>
+                    <BuyButton type="button">
+                        <Icons.cart weight="fill" size={22} />
+                    </BuyButton>
+                </div>
             </footer>
         </CoffeeCardContainer>
     );
