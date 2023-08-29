@@ -1,8 +1,17 @@
+import { useMemo, useState } from "react";
 import Coffee from "../../../../assets/coffees/Type=Americano.svg";
 import { Heading, Paragraph } from "../../../../components/Typographt";
 import { Icons } from "../../../../components/icons";
 import { formatMoney } from "../../../../lib/utils";
-import { BuyButton, CoffeeCardContainer, CoffeeTags, PriceContainer } from "./styles";
+import {
+    BuyButton,
+    CardFooter,
+    CoffeeCardContainer,
+    CoffeeTags,
+    IconWrapper,
+    PriceContainer,
+    QuantityContainer,
+} from "./styles";
 
 export interface Coffee {
     id: number;
@@ -18,7 +27,17 @@ interface CoffeeCardProps {
 }
 
 export default function CoffeeCard({ coffee }: CoffeeCardProps) {
-    const formattedPrice = formatMoney(coffee.price);
+    const [quantity, setQuantity] = useState(1);
+
+    const handleIncrease = () => {
+        setQuantity((prevState) => Math.min(prevState + 1, 9));
+    };
+
+    const handleDecrease = () => {
+        setQuantity((prevState) => Math.max(prevState - 1, 1));
+    };
+
+    const formattedPrice = useMemo(() => formatMoney(coffee.price), []);
 
     return (
         <CoffeeCardContainer>
@@ -37,7 +56,7 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
                 {coffee.description}
             </Paragraph>
 
-            <footer>
+            <CardFooter>
                 <PriceContainer>
                     <Paragraph size="s">R$</Paragraph>
                     <Heading size="m" color="text" as="strong">
@@ -45,12 +64,22 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
                     </Heading>
                 </PriceContainer>
 
-                <div>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                    <QuantityContainer>
+                        <IconWrapper onClick={handleDecrease}>
+                            <Icons.minus />
+                        </IconWrapper>
+                        <span>{quantity}</span>
+                        <IconWrapper onClick={handleIncrease}>
+                            <Icons.plus />
+                        </IconWrapper>
+                    </QuantityContainer>
+
                     <BuyButton type="button">
                         <Icons.cart weight="fill" size={22} />
                     </BuyButton>
                 </div>
-            </footer>
+            </CardFooter>
         </CoffeeCardContainer>
     );
 }

@@ -13,7 +13,7 @@ export const CoffeeCardContainer = styled.div`
     background: ${({ theme }) => theme.colors["base-card"]};
     border-radius: 6px 36px 6px 36px;
 
-    padding: 0 1.25rem;
+    padding: 0 1.25rem 1.25rem 1.25rem;
 
     img {
         width: 7.5rem;
@@ -67,4 +67,39 @@ export const BuyButton = styled.button`
     &:hover {
         background-color: ${({ theme }) => theme.colors["brand-purple"]};
     }
+`;
+
+export const QuantityContainer = styled.div`
+    flex: 1;
+    background: ${({ theme }) => theme.colors["base-button"]};
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 6px;
+    padding: 0.5rem;
+`;
+
+export const IconWrapper = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: ${({ theme }) => theme.colors["brand-purple"]};
+    transition: 0.4s;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.4;
+    }
+
+    &:not(:disabled):hover {
+        color: ${({ theme }) => theme.colors["brand-purple-dark"]};
+    }
+`;
+
+export const CardFooter = styled.footer`
+    display: flex;
+    align-items: center;
+    gap: 1.4375rem;
 `;
