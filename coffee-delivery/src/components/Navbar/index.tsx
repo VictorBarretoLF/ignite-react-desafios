@@ -57,7 +57,9 @@ export default function Navbar() {
 
     return (
         <NavbarContainer>
-            <img src={CoffeeLogo} />
+            <NavLink to="/">
+                <img src={CoffeeLogo} />
+            </NavLink>
 
             <LinksContainer>
                 <RegionContainer>
@@ -66,7 +68,7 @@ export default function Navbar() {
                         <span>{currentLocation?.city + ", " + currentLocation?.region}</span>
                     </p>
                 </RegionContainer>
-                <NavLink to="#">
+                <NavLink to="/checkout">
                     <CartButton>
                         <ShoppingCart size={22} weight="fill" />
                     </CartButton>
