@@ -1,5 +1,10 @@
-import React from "react";
+import { CheckoutContainer } from "./styles";
 
 export default function Checkout() {
-    return <div>checkout</div>;
+    return (
+        <CheckoutContainer>
+            <div>complete seu pedido</div>
+            <div>cafés</div>
+        </CheckoutContainer>
+    );
 }
