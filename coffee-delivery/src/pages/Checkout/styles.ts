@@ -7,3 +7,10 @@ export const CheckoutContainer = styled.form`
     justify-content: space-between;
     gap: 2rem;
 `;
+
+export const AddressAndPaymentOptionsContainer = styled.div`
+    width: 100%;
+    max-width: 40rem;
+
+    border: 1px solid red;
+`;
