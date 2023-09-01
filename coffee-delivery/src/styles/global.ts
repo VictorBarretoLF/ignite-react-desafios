@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors["base-background"]};
     color: ${({ theme }) => theme.colors["base-text"]};
+    font-family: 'Roboto', sans-serif;  /* Add this line */
     -webkit-font-smoothing: antialiased;
   }
 `;

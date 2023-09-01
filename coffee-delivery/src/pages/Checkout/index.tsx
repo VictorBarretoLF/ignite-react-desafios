@@ -1,21 +1,28 @@
 import { Heading } from "../../components/Typographt";
-import ProfileAddressAndCard from "./components/ProfileAddressAndCard";
-import { CheckoutContainer, AddressAndPaymentOptionsContainer } from "./styles";
+import ProfileAddress from "./components/ProfileAddress";
+import {
+    CheckoutContainer,
+    AddressAndPaymentOptionsContainer,
+    LeftHeader,
+    CoffeeListContainer,
+} from "./styles";
 
 export default function Checkout() {
     return (
         <CheckoutContainer>
             <AddressAndPaymentOptionsContainer>
-                <header>
+                <LeftHeader>
                     <Heading size="xs" weight="700" color="subtitle">
-                        Heading
+                        Complete seu pedido
                     </Heading>
-                </header>
+                </LeftHeader>
+
+                <ProfileAddress />
             </AddressAndPaymentOptionsContainer>
 
-            <div style={{ width: "100%", maxWidth: "28rem" }}>
+            <CoffeeListContainer>
                 <div>cafés</div>
-            </div>
+            </CoffeeListContainer>
         </CheckoutContainer>
     );
 }

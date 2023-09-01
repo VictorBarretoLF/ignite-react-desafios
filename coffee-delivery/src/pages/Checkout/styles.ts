@@ -14,3 +14,12 @@ export const AddressAndPaymentOptionsContainer = styled.div`
 
     border: 1px solid red;
 `;
+
+export const LeftHeader = styled.header`
+    margin-bottom: 1rem;
+`;
+
+export const CoffeeListContainer = styled.div`
+    width: 100%;
+    max-width: 28rem;
+`;
