@@ -1,4 +1,4 @@
-import { Heading } from "../../../../components/Typographt";
+import { Heading } from "../../../../components/typographt";
 import { coffeeList } from "../../../../config/coffee-list";
 import CoffeeCard from "../CoffeeCard";
 import { CoffeeList, CoffeeMenuContainer } from "./styles";

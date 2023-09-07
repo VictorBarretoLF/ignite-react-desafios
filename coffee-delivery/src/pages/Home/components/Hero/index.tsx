@@ -1,6 +1,6 @@
 import { AdvantagesContainer, HeaderContainer, HeroContainer } from "./styles";
 import InfoWithIcon from "../../../../components/InfoWithIcon";
-import { Heading, Paragraph } from "../../../../components/Typographt";
+import { Heading, Paragraph } from "../../../../components/typographt";
 import IntroLogo from "../../../../assets/intro-img.png";
 import { useTheme } from "styled-components";
 

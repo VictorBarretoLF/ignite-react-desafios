@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import Coffee from "../../../../assets/coffees/Type=Americano.svg";
-import { Heading, Paragraph } from "../../../../components/Typographt";
+import { Heading, Paragraph } from "../../../../components/typographt";
 import { Icons } from "../../../../components/icons";
 import { formatMoney } from "../../../../lib/utils";
 import {

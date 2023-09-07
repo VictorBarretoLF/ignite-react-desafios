@@ -6,6 +6,7 @@ export const CheckoutContainer = styled.form`
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    flex-wrap: wrap;
 `;
 
 export const AddressAndPaymentOptionsContainer = styled.div`

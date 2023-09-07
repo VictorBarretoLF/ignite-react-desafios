@@ -16,7 +16,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     ({ error, rightText, isInvalid, className, ...props }, ref) => {
         return (
-            <InputFieldContainer>
+            <InputFieldContainer className={className}>
                 <StyledInputContainer isInvalid={isInvalid}>
                     <StyledInput type="text" ref={ref} {...props} />
                     {!!rightText && <RightText>{rightText}</RightText>}
