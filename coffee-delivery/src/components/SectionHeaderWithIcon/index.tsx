@@ -22,7 +22,6 @@ export default function SectionHeaderWithIcon({
     return (
         <SectionHeaderWithIconContainer>
             <div>
-                {/* TODO: DEIXAR AS CORES DINAMICAS CONFORME O TEMA */}
                 <Icon color={!iconColor ? "black" : theme.colors[iconColor]} />
             </div>
             <div>
