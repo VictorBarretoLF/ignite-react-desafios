@@ -8,6 +8,9 @@ import {
     Plus,
     MapPinLine,
     CurrencyDollar,
+    Money,
+    CreditCard,
+    Bank,
 } from "phosphor-react";
 
 export const Icons = {
@@ -20,6 +23,9 @@ export const Icons = {
     minus: Minus,
     plus: Plus,
     currencyDollar: CurrencyDollar,
+    money: Money,
+    creditCard: CreditCard,
+    bank: Bank,
 };
 
 export type IconTypes = keyof typeof Icons;

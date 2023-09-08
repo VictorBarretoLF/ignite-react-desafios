@@ -5,6 +5,7 @@ export const PaymentOptionsContainer = styled.div`
 
     background-color: ${({ theme }) => theme.colors["base-card"]};
 
+    margin-top: 0.75rem;
     padding: 2.5rem;
 
     display: flex;
@@ -12,32 +13,36 @@ export const PaymentOptionsContainer = styled.div`
     gap: 2rem;
 `;
 
-export const PaymentSelectOptionContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.75rem;
-
-    @media (min-width: 576px) {
-        flex-direction: row;
-        justify-content: space-between;
+export const PaymentOptionContainer = styled.div`
+    input {
+        visibility: hidden;
+        appearance: none;
+        display: none;
     }
-`;
 
-export const OptionContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.75rem;
-    font-size: 0.75rem;
+    label {
+        width: 11.1875rem;
+        padding: 1rem;
+        background: ${({ theme }) => theme.colors["base-button"]};
+        color: ${({ theme }) => theme.colors["base-text"]};
 
-    text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.75rem;
 
-    padding: 1rem;
-    gap: 0.75rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
 
-    border: 1px solid ${({ theme }) => theme.colors["base-button"]};
-    border-radius: 6px;
-    transition: background-color 0.3s;
+        border-radius: 6px;
+        border: 1px solid ${({ theme }) => theme.colors["base-button"]};
+
+        &:hover {
+            background-color: ${({ theme }) => theme.colors["base-hover"]};
+        }
+
+        cursor: pointer;
+    }
 
     svg {
         color: ${({ theme }) => theme.colors["brand-purple"]};
@@ -45,9 +50,12 @@ export const OptionContainer = styled.div`
         height: 1rem;
     }
 
-    &:hover {
-        background: ${({ theme }) => theme.colors["base-hover"]};
-    }
+    input:checked + label {
+        background: ${({ theme }) => theme.colors["brand-purple-light"]};
+        border-color: ${({ theme }) => theme.colors["brand-purple"]};
 
-    cursor: pointer;
+        &:hover {
+            background: ${({ theme }) => theme.colors["brand-purple-light"]};
+        }
+    }
 `;
