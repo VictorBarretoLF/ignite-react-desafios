@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const ProfileAdressContainer = styled.div`
+export const PaymentOptionsContainer = styled.div`
     border-radius: 6px;
 
     background-color: ${({ theme }) => theme.colors["base-card"]};
@@ -11,4 +11,3 @@ export const ProfileAdressContainer = styled.div`
     flex-direction: column;
     gap: 2rem;
 `;
-

@@ -8,6 +8,7 @@ import {
     CoffeeListContainer,
 } from "./styles";
 import { useConfirmOrder } from "../../hooks/useConfirmOrder";
+import PaymentOptions from "./components/PaymentOptions";
 
 export default function Checkout() {
     const confirmOrderForm = useConfirmOrder();
@@ -23,6 +24,8 @@ export default function Checkout() {
                     </LeftHeader>
 
                     <ProfileAddress />
+
+                    <PaymentOptions />
                 </AddressAndPaymentOptionsContainer>
 
                 <CoffeeListContainer>

@@ -1,20 +1,16 @@
-import { Input } from "../../../../components/Input";
-import { Icons } from "../../../../components/icons";
+import SectionHeaderWithIcon from "../../../../components/SectionHeaderWithIcon";
 import AddressForm from "../AddressForm";
-import { ProfileAddressHeader, ProfileAdressContainer } from "./styles";
+import { ProfileAdressContainer } from "./styles";
 
 export default function ProfileAddress() {
     return (
         <ProfileAdressContainer>
-            <ProfileAddressHeader>
-                <div>
-                    <Icons.mapPinLine />
-                </div>
-                <div>
-                    <p>Endereço de Entrega</p>
-                    <p>Informe o endereço onde deseja receber seu pedido</p>
-                </div>
-            </ProfileAddressHeader>
+            <SectionHeaderWithIcon
+                title="Endereço de Entrega"
+                subtitle="Informe o endereço onde deseja receber seu pedido"
+                icon="mapPinLine"
+            />
+
             <AddressForm />
         </ProfileAdressContainer>
     );

@@ -8,7 +8,7 @@ export const AddressFormContainer = styled.div`
     row-gap: 1rem;
 
     @media (min-width: 576px) {
-        grid-template-columns: minmax(1fr, 12.5rem) minmax(17.25rem, 1fr) minmax(3.75rem, 1fr);
+        grid-template-columns: minmax(12.5rem, 1fr) minmax(1fr, 17.25rem) minmax(3.75rem, 1fr);
 
         .cep {
             grid-column: span 1;
