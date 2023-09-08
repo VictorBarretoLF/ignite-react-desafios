@@ -9,6 +9,7 @@ export default function ProfileAddress() {
                 title="Endereço de Entrega"
                 subtitle="Informe o endereço onde deseja receber seu pedido"
                 icon="mapPinLine"
+                iconColor="brand-yellow"
             />
 
             <AddressForm />

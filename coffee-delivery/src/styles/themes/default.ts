@@ -39,3 +39,5 @@ export const defaultTheme = {
         title: "'Baloo 2'",
     },
 };
+
+export type DefaultThemeColors = keyof typeof defaultTheme.colors;

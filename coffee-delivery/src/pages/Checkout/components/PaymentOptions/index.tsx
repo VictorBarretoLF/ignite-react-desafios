@@ -6,6 +6,7 @@ export default function PaymentOptions() {
         <PaymentOptionsContainer>
             <SectionHeaderWithIcon
                 icon="currencyDollar"
+                iconColor="brand-purple"
                 title="Pagamento"
                 subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
             />

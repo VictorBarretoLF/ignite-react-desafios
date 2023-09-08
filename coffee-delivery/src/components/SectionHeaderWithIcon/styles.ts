@@ -7,7 +7,5 @@ export const SectionHeaderWithIconContainer = styled.header`
     svg {
         width: 1.375rem;
         height: 1.375rem;
-
-        color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
     }
 `;
