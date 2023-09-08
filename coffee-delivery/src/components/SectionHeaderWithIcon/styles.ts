@@ -8,4 +8,12 @@ export const SectionHeaderWithIconContainer = styled.header`
         width: 1.375rem;
         height: 1.375rem;
     }
+
+    div > p:first-child {
+        color: ${({ theme }) => theme.colors["base-title"]};
+    }
+
+    div > p:last-child {
+        color: ${({ theme }) => theme.colors["base-text"]};
+    }
 `;

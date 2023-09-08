@@ -15,11 +15,11 @@ export default function PaymentOptions() {
             <PaymentSelectOptionContainer>
                 <OptionContainer>
                     <Icons.cart />
-                    <div>Cartão de crédito</div>
+                    <label>Cartão de crédito</label>
                 </OptionContainer>
                 <OptionContainer>
                     <Icons.cart />
-                    <div>Cartão de crédito</div>
+                    <label>Cartão de crédito</label>
                 </OptionContainer>
                 <OptionContainer>
                     <Icons.cart />
