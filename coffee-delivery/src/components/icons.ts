@@ -11,6 +11,7 @@ import {
     Money,
     CreditCard,
     Bank,
+    Trash,
 } from "phosphor-react";
 
 export const Icons = {
@@ -26,6 +27,7 @@ export const Icons = {
     money: Money,
     creditCard: CreditCard,
     bank: Bank,
+    trash: Trash,
 };
 
 export type IconTypes = keyof typeof Icons;

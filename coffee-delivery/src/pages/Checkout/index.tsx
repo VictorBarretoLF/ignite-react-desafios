@@ -9,6 +9,7 @@ import {
 } from "./styles";
 import { useConfirmOrder } from "../../hooks/useConfirmOrder";
 import PaymentOptions from "./components/PaymentOptions";
+import SelectedCoffees from "./components/SelectedCoffees";
 
 export default function Checkout() {
     const confirmOrderForm = useConfirmOrder();
@@ -29,7 +30,13 @@ export default function Checkout() {
                 </AddressAndPaymentOptionsContainer>
 
                 <CoffeeListContainer>
-                    <div>cafés</div>
+                    <LeftHeader>
+                        <Heading size="xs" weight="700" color="subtitle">
+                            Cafés
+                        </Heading>
+                    </LeftHeader>
+
+                    <SelectedCoffees />
                 </CoffeeListContainer>
             </CheckoutContainer>
         </FormProvider>
