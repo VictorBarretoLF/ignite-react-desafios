@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import Coffee from "../../../../assets/coffees/Type=Americano.svg";
 import { Heading, Paragraph } from "../../../../components/typographt";
 import { Icons } from "../../../../components/icons";
 import { formatMoney } from "../../../../lib/utils";
@@ -12,15 +11,8 @@ import {
     PriceContainer,
     QuantityContainer,
 } from "./styles";
-
-export interface Coffee {
-    id: number;
-    tags: string[];
-    name: string;
-    description: string;
-    svg: string;
-    price: number;
-}
+import { Coffee } from "../../../../types";
+import { useCart } from "../../../../hooks/useCart";
 
 interface CoffeeCardProps {
     coffee: Coffee;
@@ -28,6 +20,7 @@ interface CoffeeCardProps {
 
 export default function CoffeeCard({ coffee }: CoffeeCardProps) {
     const [quantity, setQuantity] = useState(1);
+    const { addCoffeeToCart } = useCart();
 
     const handleIncrease = () => {
         setQuantity((prevState) => Math.min(prevState + 1, 9));
@@ -38,6 +31,17 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
     };
 
     const formattedPrice = useMemo(() => formatMoney(coffee.price), []);
+
+    const handleAddToCart = () => {
+        const coffeeToAdd = {
+            ...coffee,
+            quantity,
+        };
+
+        setQuantity(1);
+        console.log("handleAddToCart", coffee.id);
+        addCoffeeToCart(coffeeToAdd);
+    };
 
     return (
         <CoffeeCardContainer>
@@ -75,7 +79,7 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
                         </IconWrapper>
                     </QuantityContainer>
 
-                    <BuyButton type="button">
+                    <BuyButton type="button" onClick={handleAddToCart}>
                         <Icons.cart weight="fill" size={22} />
                     </BuyButton>
                 </div>
