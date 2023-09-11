@@ -14,7 +14,7 @@ import SelectedCoffees from "./components/SelectedCoffees";
 
 export default function Checkout() {
     const confirmOrderForm = useConfirmOrder();
-
+    // TODO: SEPARAR MELHOR OS COMPONENTES DE OPÇÕES DE PAGAMENTO E DA LISTA DE CAFÉS E CONFIRMAÇÃO DE PAGANENTO
     return (
         <FormProvider {...confirmOrderForm}>
             <CheckoutContainer>
