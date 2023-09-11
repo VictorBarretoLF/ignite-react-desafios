@@ -1,23 +1,28 @@
+import { Paragraph } from "../../../../components/typographt";
+import { ConfirmButton, PurchaseSummaryContainer } from "./styles";
+
 function PurchaseSummary() {
     return (
-        <div>
+        <PurchaseSummaryContainer>
             <div>
-                <RegularText size="s">Total de itens</RegularText>
-                <RegularText>R$ {formattedItemsTotal}</RegularText>
+                <Paragraph size="s">Total de itens</Paragraph>
+                <Paragraph>R$ 10,00</Paragraph>
             </div>
             <div>
-                <RegularText size="s">Entrega</RegularText>
-                <RegularText>R$ {formattedDeliveryPrice}</RegularText>
+                <Paragraph size="s">Entrega</Paragraph>
+                <Paragraph>R$ 50,00</Paragraph>
             </div>
             <div>
-                <RegularText weight="700" color="subtitle" size="l">
+                <Paragraph weight="700" color="subtitle" size="l">
                     Total
-                </RegularText>
-                <RegularText weight="700" color="subtitle" size="l">
-                    R$ {formattedCartTotal}
-                </RegularText>
+                </Paragraph>
+                <Paragraph weight="700" color="subtitle" size="l">
+                    R$ 10,00
+                </Paragraph>
             </div>
-        </div>
+
+            <ConfirmButton type="submit">confirmar pedido</ConfirmButton>
+        </PurchaseSummaryContainer>
     );
 }
 
