@@ -6,6 +6,7 @@ import {
     AddressAndPaymentOptionsContainer,
     LeftHeader,
     CoffeeListContainer,
+    ConfirmOrderSection,
 } from "./styles";
 import { useConfirmOrder } from "../../hooks/useConfirmOrder";
 import PaymentOptions from "./components/PaymentOptions";
@@ -36,7 +37,9 @@ export default function Checkout() {
                         </Heading>
                     </LeftHeader>
 
-                    <SelectedCoffees />
+                    <ConfirmOrderSection>
+                        <SelectedCoffees />
+                    </ConfirmOrderSection>
                 </CoffeeListContainer>
             </CheckoutContainer>
         </FormProvider>

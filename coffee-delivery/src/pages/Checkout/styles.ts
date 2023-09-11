@@ -9,6 +9,13 @@ export const CheckoutContainer = styled.form`
     flex-wrap: wrap;
 `;
 
+export const ConfirmOrderSection = styled.section`
+    border-radius: 6px 44px 6px 44px;
+    background: ${({ theme }) => theme.colors["base-card"]};
+
+    padding: 2.5rem;
+`;
+
 export const AddressAndPaymentOptionsContainer = styled.div`
     width: 100%;
     max-width: 40rem;
