@@ -1,27 +1,45 @@
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { Icons } from "../../../../components/icons";
 import { Paragraph } from "../../../../components/typographt";
-import { coffeeList } from "../../../../config/coffee-list";
+import { CartItem } from "../../../../contexts/CartContext";
+import { formatMoney } from "../../../../lib/utils";
 import { ActionsContainer, CoffeeCardContainer, RemoveButton } from "./styles";
 
-const coffeeData = coffeeList[0];
+type CoffeeCartCardProps = {
+    coffee: CartItem;
+};
 
-export default function CoffeeCard() {
+export default function CoffeeCard({ coffee }: CoffeeCartCardProps) {
+    function handleIncrease() {
+        console.log("increase");
+    }
+
+    function handleDecrease() {
+        console.log("decrease");
+    }
+
+    function handleRemove() {
+        console.log("remove: " + coffee.id);
+    }
+
+    const coffeeTotal = coffee.price * coffee.quantity;
+    const formattedPrice = formatMoney(coffeeTotal);
+
     return (
         <CoffeeCardContainer>
             <div>
-                <img src={coffeeData.svg} alt={coffeeData.name} />
+                <img src={coffee.svg} alt={coffee.name} />
 
                 <div>
-                    <Paragraph color="subtitle">{coffeeData.name}</Paragraph>
+                    <Paragraph color="subtitle">{coffee.name}</Paragraph>
 
                     <ActionsContainer>
                         <QuantityInput
-                            onDecrease={() => console.log("decrease")}
-                            onIncrease={() => console.log("increase")}
-                            quantity={1}
+                            onDecrease={handleDecrease}
+                            onIncrease={handleIncrease}
+                            quantity={coffee.quantity}
                         />
-                        <RemoveButton type="button">
+                        <RemoveButton type="button" onClick={handleRemove}>
                             <Icons.trash size={16} />
                             <span>REMOVER</span>
                         </RemoveButton>
@@ -29,7 +47,7 @@ export default function CoffeeCard() {
                 </div>
             </div>
 
-            <p>R$ {coffeeData.price}</p>
+            <p>R$ {formattedPrice}</p>
         </CoffeeCardContainer>
     );
 }

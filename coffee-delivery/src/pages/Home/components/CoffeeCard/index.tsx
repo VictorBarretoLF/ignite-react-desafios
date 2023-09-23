@@ -37,9 +37,7 @@ export default function CoffeeCard({ coffee }: CoffeeCardProps) {
             ...coffee,
             quantity,
         };
-
         setQuantity(1);
-        console.log("handleAddToCart", coffee.id);
         addCoffeeToCart(coffeeToAdd);
     };
 

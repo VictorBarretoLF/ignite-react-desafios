@@ -1,7 +1,8 @@
 import { ReactNode, createContext, useCallback, useEffect, useState } from "react";
 import { Coffee } from "../types";
+import { produce } from "immer";
 
-interface CartItem extends Coffee {
+export interface CartItem extends Coffee {
     quantity: number;
 }
 
@@ -20,18 +21,17 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
     function addCoffeeToCart(coffee: CartItem) {
-        const index = cartItems.findIndex((c) => c.id === coffee.id);
-        const updatedCartItems = [...cartItems];
+        setCartItems((prevCartItems) =>
+            produce(prevCartItems, (draft) => {
+                const index = draft.findIndex((c) => c.id === coffee.id);
 
-        if (index < 0) {
-            updatedCartItems.push(coffee);
-            setCartItems(updatedCartItems);
-        } else {
-            const updatedCartItem = updatedCartItems[index];
-            updatedCartItem.quantity += coffee.quantity;
-            updatedCartItems[index] = updatedCartItem;
-            setCartItems(updatedCartItems);
-        }
+                if (index < 0) {
+                    draft.push(coffee);
+                } else {
+                    draft[index].quantity += coffee.quantity;
+                }
+            }),
+        );
     }
 
     return (
