@@ -3,6 +3,7 @@ import { CartButton, LinksContainer, NavbarContainer, RegionContainer } from "./
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MapPin, ShoppingCart } from "phosphor-react";
+import { useCart } from "../../hooks/useCart";
 
 type IPAddressInfo = {
     query: string;
@@ -39,6 +40,7 @@ const DEFAULT_LOCATION: IPAddressInfo = {
 };
 
 export default function Navbar() {
+    const { totalItemsInCart } = useCart();
     const [currentLocation, setCurrentLocation] = useState<IPAddressInfo>(DEFAULT_LOCATION);
 
     useEffect(() => {
@@ -71,6 +73,7 @@ export default function Navbar() {
                 <NavLink to="/checkout">
                     <CartButton>
                         <ShoppingCart size={22} weight="fill" />
+                        {totalItemsInCart >= 1 && <span>{totalItemsInCart}</span>}
                     </CartButton>
                 </NavLink>
             </LinksContainer>

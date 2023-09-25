@@ -32,6 +32,33 @@ export const CartButton = styled.button`
     border-radius: 6px;
 
     cursor: pointer;
+
+    position: relative;
+
+    span {
+        position: absolute;
+
+        background-color: red;
+
+        top: 0;
+        right: 0;
+
+        transform: translate(50%, -50%);
+
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
+        color: ${({ theme }) => theme.colors["base-white"]};
+
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
 `;
 
 export const RegionContainer = styled.div`
