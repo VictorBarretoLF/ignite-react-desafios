@@ -2,6 +2,7 @@ import { QuantityInput } from "../../../../components/QuantityInput";
 import { Icons } from "../../../../components/icons";
 import { Paragraph } from "../../../../components/typographt";
 import { CartItem } from "../../../../contexts/CartContext";
+import { useCart } from "../../../../hooks/useCart";
 import { formatMoney } from "../../../../lib/utils";
 import { ActionsContainer, CoffeeCardContainer, RemoveButton } from "./styles";
 
@@ -10,6 +11,8 @@ type CoffeeCartCardProps = {
 };
 
 export default function CoffeeCard({ coffee }: CoffeeCartCardProps) {
+    const { removeCoffeeFromCart } = useCart();
+
     function handleIncrease() {
         console.log("increase");
     }
@@ -19,7 +22,7 @@ export default function CoffeeCard({ coffee }: CoffeeCartCardProps) {
     }
 
     function handleRemove() {
-        console.log("remove: " + coffee.id);
+        removeCoffeeFromCart(coffee.id);
     }
 
     const coffeeTotal = coffee.price * coffee.quantity;

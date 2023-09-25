@@ -9,6 +9,7 @@ export interface CartItem extends Coffee {
 interface CartContextType {
     cartItems: CartItem[];
     addCoffeeToCart: (coffee: CartItem) => void;
+    removeCoffeeFromCart: (coffeeId: number) => void;
 }
 
 export const CartContext = createContext({} as CartContextType);
@@ -34,11 +35,23 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         );
     }
 
+    const removeCoffeeFromCart = (coffeeId: number) => {
+        setCartItems(
+            produce((draft) => {
+                const index = draft.findIndex((item) => item.id === coffeeId);
+                if (index !== -1) {
+                    draft.splice(index, 1);
+                }
+            }),
+        );
+    };
+
     return (
         <CartContext.Provider
             value={{
                 cartItems,
                 addCoffeeToCart,
+                removeCoffeeFromCart,
             }}
         >
             {children}
