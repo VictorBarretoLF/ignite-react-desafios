@@ -22,6 +22,7 @@ interface CartContextProviderProps {
     children: ReactNode;
 }
 
+// TODO: STORE THE SELECTED COFFEES ON LOCAL STORAGE
 export function CartContextProvider({ children }: CartContextProviderProps) {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
