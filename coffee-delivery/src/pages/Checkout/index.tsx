@@ -8,17 +8,25 @@ import {
     CoffeeListContainer,
     ConfirmOrderSection,
 } from "./styles";
-import { useConfirmOrder } from "../../hooks/useConfirmOrder";
+import { ConfirmOrderFormData, useConfirmOrder } from "../../hooks/useConfirmOrder";
 import PaymentOptions from "./components/PaymentOptions";
 import SelectedCoffees from "./components/SelectedCoffees";
 import PurchaseSummary from "./components/PurchaseSummary";
 
 export default function Checkout() {
     const confirmOrderForm = useConfirmOrder();
-    // TODO: SEPARAR MELHOR OS COMPONENTES DE OPÇÕES DE PAGAMENTO E DA LISTA DE CAFÉS E CONFIRMAÇÃO DE PAGANENTO
+    const {
+        handleSubmit,
+        formState: { errors },
+    } = confirmOrderForm;
+    console.log(errors);
+    function handleConfirmOrder(data: ConfirmOrderFormData) {
+        console.log(data);
+    }
+
     return (
         <FormProvider {...confirmOrderForm}>
-            <CheckoutContainer>
+            <CheckoutContainer onSubmit={handleSubmit(handleConfirmOrder)}>
                 <AddressAndPaymentOptionsContainer>
                     <LeftHeader>
                         <Heading size="xs" weight="700" color="subtitle">
