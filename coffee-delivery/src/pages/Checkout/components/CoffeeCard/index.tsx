@@ -11,14 +11,14 @@ type CoffeeCartCardProps = {
 };
 
 export default function CoffeeCard({ coffee }: CoffeeCartCardProps) {
-    const { removeCoffeeFromCart } = useCart();
+    const { removeCoffeeFromCart, increaseCoffeeQuantity, decreaseCoffeeQuantity } = useCart();
 
     function handleIncrease() {
-        console.log("increase");
+        increaseCoffeeQuantity(coffee.id);
     }
 
     function handleDecrease() {
-        console.log("decrease");
+        decreaseCoffeeQuantity(coffee.id);
     }
 
     function handleRemove() {
