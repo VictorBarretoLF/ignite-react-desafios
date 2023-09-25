@@ -8,6 +8,8 @@ export interface CartItem extends Coffee {
 
 interface CartContextType {
     cartItems: CartItem[];
+    totalItemsInCart: number;
+    totalPriceInCart: number;
     addCoffeeToCart: (coffee: CartItem) => void;
     removeCoffeeFromCart: (coffeeId: number) => void;
     increaseCoffeeQuantity: (coffeeId: number) => void;
@@ -22,6 +24,13 @@ interface CartContextProviderProps {
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+    const totalItemsInCart = cartItems.length;
+
+    const totalPriceInCart = cartItems.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0,
+    );
 
     function addCoffeeToCart(coffee: CartItem) {
         setCartItems((prevCartItems) =>
@@ -80,6 +89,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
                 removeCoffeeFromCart,
                 increaseCoffeeQuantity,
                 decreaseCoffeeQuantity,
+                totalItemsInCart,
+                totalPriceInCart,
             }}
         >
             {children}
