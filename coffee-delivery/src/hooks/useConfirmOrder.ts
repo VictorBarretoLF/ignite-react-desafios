@@ -7,9 +7,9 @@ const confirmOrderFormValidationSchema = z.object({
     street: z.string().min(1, "Informe o Rua"),
     number: z.string().min(1, "Informe o Número"),
     complement: z.string(),
-    district: z.string().min(1, "Informe o Bairro"),
+    neighborhood: z.string().min(1, "Informe o Bairro"),
     city: z.string().min(1, "Informe a Cidade"),
-    uf: z.string().min(1, "Informe a UF"),
+    uf: z.string().min(1, "Informe a UF").max(2, "Max 2 caracteres"),
 });
 
 export type OrderData = z.infer<typeof confirmOrderFormValidationSchema>;
