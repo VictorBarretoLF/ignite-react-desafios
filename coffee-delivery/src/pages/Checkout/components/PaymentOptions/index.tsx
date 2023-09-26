@@ -1,6 +1,8 @@
+import { useFormContext } from "react-hook-form";
 import SectionHeaderWithIcon from "../../../../components/SectionHeaderWithIcon";
 import { Icons } from "../../../../components/icons";
-import { PaymentOptionContainer, PaymentOptionsContainer } from "./styles";
+import { ErrorText, PaymentOptionContainer, PaymentOptionsContainer } from "./styles";
+import { OrderData } from "../../../../hooks/useConfirmOrder";
 
 const paymentOptionsData = {
     credit: {
@@ -20,6 +22,11 @@ const paymentOptionsData = {
 type PaymentOptionKeys = keyof typeof paymentOptionsData;
 
 export default function PaymentOptions() {
+    const {
+        register,
+        formState: { errors },
+    } = useFormContext<OrderData>();
+
     return (
         <PaymentOptionsContainer>
             <SectionHeaderWithIcon
@@ -29,7 +36,7 @@ export default function PaymentOptions() {
                 subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
             />
 
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2rem" }}>
                 {Object.keys(paymentOptionsData).map((key) => {
                     const option = paymentOptionsData[key as PaymentOptionKeys];
                     const Icon = option.icon;
@@ -38,9 +45,8 @@ export default function PaymentOptions() {
                             <input
                                 type="radio"
                                 id={key}
-                                name="paymentMethod"
                                 value={key}
-                                onClick={(e) => console.log(e.currentTarget.value)}
+                                {...register("paymentMethod")}
                             />
                             <label htmlFor={key}>
                                 <Icon />
@@ -50,6 +56,8 @@ export default function PaymentOptions() {
                     );
                 })}
             </div>
+
+            {errors.paymentMethod && <ErrorText>{errors.paymentMethod.message}</ErrorText>}
         </PaymentOptionsContainer>
     );
 }

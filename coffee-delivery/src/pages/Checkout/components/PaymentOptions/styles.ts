@@ -8,9 +8,9 @@ export const PaymentOptionsContainer = styled.div`
     margin-top: 0.75rem;
     padding: 2.5rem;
 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; */
 `;
 
 export const PaymentOptionContainer = styled.div`
@@ -58,4 +58,9 @@ export const PaymentOptionContainer = styled.div`
             background: ${({ theme }) => theme.colors["brand-purple-light"]};
         }
     }
+`;
+
+export const ErrorText = styled.span`
+    color: ${({ theme }) => theme.colors["base-error"]};
+    font-size: 0.75rem;
 `;
