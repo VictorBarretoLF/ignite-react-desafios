@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { defaultTheme } from "../styles/themes/default";
 
 interface HeadingProps {
     size?: "xl" | "l" | "m" | "s" | "xs";
-    color?: "title" | "subtitle" | "text";
+    color?: keyof typeof defaultTheme.colors;
     weight?: string | number;
 }
 
@@ -13,7 +14,7 @@ interface ParagraphProps {
 }
 
 export const Heading = styled.h1<HeadingProps>`
-    color: ${({ theme, color }) => theme.colors[`base-${color ?? "title"}`]};
+    color: ${({ theme, color }) => theme.colors[color ?? "base-title"]};
     font-size: ${({ theme, size }) => theme.textSizes[`title-title-${size ?? "m"}`]};
     font-family: ${({ theme }) => theme.fonts.title};
     line-height: 130%;
