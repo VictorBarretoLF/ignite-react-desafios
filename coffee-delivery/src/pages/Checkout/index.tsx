@@ -12,16 +12,20 @@ import { ConfirmOrderFormData, useConfirmOrder } from "../../hooks/useConfirmOrd
 import PaymentOptions from "./components/PaymentOptions";
 import SelectedCoffees from "./components/SelectedCoffees";
 import PurchaseSummary from "./components/PurchaseSummary";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 export default function Checkout() {
     const confirmOrderForm = useConfirmOrder();
-    const {
-        handleSubmit,
-        formState: { errors },
-    } = confirmOrderForm;
-    console.log(errors);
+    const { handleSubmit } = confirmOrderForm;
+    const navigate = useNavigate();
+    const { clearCart } = useCart();
+
     function handleConfirmOrder(data: ConfirmOrderFormData) {
-        console.log(data);
+        navigate("/checkout-success", {
+            state: data,
+        });
+        clearCart();
     }
 
     return (
