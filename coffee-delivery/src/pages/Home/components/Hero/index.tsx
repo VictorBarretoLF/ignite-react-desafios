@@ -2,11 +2,8 @@ import { AdvantagesContainer, HeaderContainer, HeroContainer } from "./styles";
 import InfoWithIcon from "../../../../components/InfoWithIcon";
 import { Heading, Paragraph } from "../../../../components/typographt";
 import IntroLogo from "../../../../assets/intro-img.png";
-import { useTheme } from "styled-components";
 
 export default function Hero() {
-    const { colors } = useTheme();
-
     return (
         <HeroContainer>
             <div>
@@ -21,22 +18,22 @@ export default function Hero() {
                     <InfoWithIcon
                         icon="cart"
                         text="Compra simples e segura"
-                        $iconBackgroundColor={colors["brand-yellow-dark"]}
+                        $iconBackgroundColor="brand-yellow-dark"
                     />
                     <InfoWithIcon
                         icon="package"
                         text="Embalagem mantém o café intacto"
-                        $iconBackgroundColor={colors["base-text"]}
+                        $iconBackgroundColor="base-text"
                     />
                     <InfoWithIcon
                         icon="timer"
                         text="Entrega rápida e rastreada"
-                        $iconBackgroundColor={colors["brand-yellow"]}
+                        $iconBackgroundColor="brand-yellow"
                     />
                     <InfoWithIcon
                         icon="coffee"
                         text="O café chega fresquinho até você"
-                        $iconBackgroundColor={colors["brand-purple"]}
+                        $iconBackgroundColor="brand-purple"
                     />
                 </AdvantagesContainer>
             </div>

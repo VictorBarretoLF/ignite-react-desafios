@@ -33,7 +33,7 @@ export default function Checkout() {
             <CheckoutContainer onSubmit={handleSubmit(handleConfirmOrder)}>
                 <AddressAndPaymentOptionsContainer>
                     <LeftHeader>
-                        <Heading size="xs" weight="700" color="subtitle">
+                        <Heading size="xs" weight="700" color="base-subtitle">
                             Complete seu pedido
                         </Heading>
                     </LeftHeader>
@@ -45,7 +45,7 @@ export default function Checkout() {
 
                 <CoffeeListContainer>
                     <LeftHeader>
-                        <Heading size="xs" weight="700" color="subtitle">
+                        <Heading size="xs" weight="700" color="base-subtitle">
                             Cafés
                         </Heading>
                     </LeftHeader>
