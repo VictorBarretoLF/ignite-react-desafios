@@ -10,7 +10,6 @@ import {
 } from "./styles";
 import { Heading, Paragraph } from "../../components/typographt";
 import InfoWithIcon from "../../components/InfoWithIcon";
-import { useTheme } from "styled-components";
 import { paymentOptionsData } from "../Checkout/components/PaymentOptions";
 
 export default function CheckoutSuccess() {
@@ -18,13 +17,11 @@ export default function CheckoutSuccess() {
     const navigate = useNavigate();
     const state = location.state as ConfirmOrderFormData;
 
-    // useEffect(() => {
-    //     if (!state) {
-    //         navigate("/");
-    //     }
-    // }, []);
-
-    console.log(state);
+    useEffect(() => {
+        if (!state) {
+            navigate("/");
+        }
+    }, []);
 
     return (
         <CheckoutSuccessContainer>
@@ -38,7 +35,6 @@ export default function CheckoutSuccess() {
                     </Paragraph>
                 </header>
 
-            
                 <OrderInfoContainer>
                     <InfoWithIcon
                         $iconBackgroundColor="brand-purple"
@@ -58,12 +54,8 @@ export default function CheckoutSuccess() {
                         $iconBackgroundColor="brand-yellow"
                         text={
                             <>
-                                <p>
-                                    Entrega em <strong>{state.street}</strong>, {state.number}
-                                </p>
-                                <p>
-                                    {state.neighborhood} - {state.city}, {state.uf}
-                                </p>
+                                <p>Previsão de entrega</p>
+                                <strong>20 min - 30 min</strong>
                             </>
                         }
                     />
