@@ -4,7 +4,7 @@ import { Icons } from "../../../../components/icons";
 import { ErrorText, PaymentOptionContainer, PaymentOptionsContainer } from "./styles";
 import { OrderData } from "../../../../hooks/useConfirmOrder";
 
-const paymentOptionsData = {
+export const paymentOptionsData = {
     credit: {
         label: "Cartão de crédito",
         icon: Icons.creditCard,
