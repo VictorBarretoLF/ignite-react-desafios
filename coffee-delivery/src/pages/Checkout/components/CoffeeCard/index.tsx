@@ -1,6 +1,6 @@
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { Icons } from "../../../../components/icons";
-import { Paragraph } from "../../../../components/typographt";
+import { Paragraph } from "../../../../components/typography";
 import { CartItem } from "../../../../contexts/CartContext";
 import { useCart } from "../../../../hooks/useCart";
 import { formatMoney } from "../../../../lib/utils";

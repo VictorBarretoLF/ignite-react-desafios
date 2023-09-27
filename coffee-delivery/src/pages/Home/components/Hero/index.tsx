@@ -1,6 +1,6 @@
 import { AdvantagesContainer, HeaderContainer, HeroContainer } from "./styles";
 import InfoWithIcon from "../../../../components/InfoWithIcon";
-import { Heading, Paragraph } from "../../../../components/typographt";
+import { Heading, Paragraph } from "../../../../components/typography";
 import IntroLogo from "../../../../assets/intro-img.png";
 
 export default function Hero() {

@@ -1,4 +1,4 @@
-import { Paragraph } from "../../../../components/typographt";
+import { Paragraph } from "../../../../components/typography";
 import { useCart } from "../../../../hooks/useCart";
 import { DELIVERY_PRICE } from "../../../../lib/constants";
 import { formatMoney } from "../../../../lib/utils";

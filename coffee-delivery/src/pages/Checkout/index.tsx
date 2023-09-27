@@ -1,5 +1,5 @@
 import { FormProvider } from "react-hook-form";
-import { Heading } from "../../components/typographt";
+import { Heading } from "../../components/typography";
 import ProfileAddress from "./components/ProfileAddress";
 import {
     CheckoutContainer,

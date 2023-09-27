@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Heading, Paragraph } from "../../../../components/typographt";
+import { Heading, Paragraph } from "../../../../components/typography";
 import { Icons } from "../../../../components/icons";
 import { formatMoney } from "../../../../lib/utils";
 import {

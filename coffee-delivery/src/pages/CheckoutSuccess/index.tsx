@@ -8,7 +8,7 @@ import {
     CheckoutSuccessStatus,
     OrderInfoContainer,
 } from "./styles";
-import { Heading, Paragraph } from "../../components/typographt";
+import { Heading, Paragraph } from "../../components/typography";
 import InfoWithIcon from "../../components/InfoWithIcon";
 import { paymentOptionsData } from "../Checkout/components/PaymentOptions";
 
